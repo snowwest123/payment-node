@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev:api-gateway": "nodemon -r dotenv/config src/api-gateway dotenv_config_path=src/api-gateway/.env.development",
+    "dev:user-service": "nodemon -r dotenv/config src/user-service dotenv_config_path=src/user-service/.env.development",
+    "dev:transaction-service": "nodemon -r dotenv/config src/transaction-service dotenv_config_path=src/transaction-service/.env.development",
+    "dev:payment-service": "nodemon -r dotenv/config src/payment-service dotenv_config_path=src/payment-service/.env.development",
+    "dev": "concurrently \"npm run dev:api-gateway\" \"npm run dev:user-service\" \"npm run dev:transaction-service\" \"npm run dev:payment-service\""
   },
   "repository": {
     "type": "git",
@@ -13,6 +17,19 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "mongoose": "^8.8.1"
+    "axios": "^1.7.9",
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.9.3",
+    "mysql2": "^3.12.0",
+    "paypal-rest-sdk": "^1.8.1",
+    "sequelize": "^6.37.5"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "dotenv": "^16.4.7",
+    "nodemon": "^3.1.9"
   }
 }
