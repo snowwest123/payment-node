@@ -12,6 +12,7 @@ export const generateToken = (user, secret = process.env.JWT_SECRET, options = {
   const payload = {
     id: user.id, // user ID
   };
+  console.log(payload, 'req.body', secret);
   return jwt.sign(payload, secret, options);
 };
 

@@ -2,8 +2,9 @@
 import { processPayment } from '../services/paymentService.js';
 
 export const createPayment = async (req, res) => {
+  
   try {
-    const payment = await processPayment(req.body.amount);
+    const payment = await processPayment(req.body);
     res.status(201).json(payment);
   } catch (error) {
     res.status(500).json({ error: error.message });

@@ -15,11 +15,11 @@ app.use(express.json());
 
 const startServer = async () => {
     try {
-      // 连接到 MySQL 并定义模型
+      // connnect MySQL then start the server
       await connectMySQL();
       app.use(`/api`, router);
   
-      // 启动交易服务
+      // start the server
       app.listen(port, () => {
         console.log(`Transaction service is running on port ${port}`);
       });

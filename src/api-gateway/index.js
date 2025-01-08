@@ -6,11 +6,23 @@ import cors from "cors";
 import express from "express";
 import router from "./routes/index.js";
 import dotenv from "dotenv";
+import rateLimit from "express-rate-limit";
+import helmet from "helmet";
 
 dotenv.config();
 
 const app = express();
 const port = process.env.PORT;
+
+
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, 
+  max: 100 // each IP can only send 100 requests per windowMs
+});
+
+app.use(helmet()); // use security HTTP headers
+app.use(limiter); // use rate limit
+
 app.use(cors()); // 设置跨域
 
 app.use(express.json());
