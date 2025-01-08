@@ -9,7 +9,7 @@ mysql: 8.0.40
 1. Host：localhost 
 2. Port: 3306 
 3. Username: root 
-4. 密码: root
+4. password: root
 5. Create database named：secure-payment
 5. Create a table named: transactions
 6. Create fields as shown in the table below
