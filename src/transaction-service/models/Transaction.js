@@ -14,12 +14,12 @@ const Transaction = sequelize.define('Transaction', {
         allowNull: false,
     },
     amount: {
-    type: DataTypes.FLOAT,
-    allowNull: false,
+        type: DataTypes.FLOAT,
+        allowNull: false,
     },
     type: {
-    type: DataTypes.STRING,
-    allowNull: false,
+        type: DataTypes.STRING,
+        allowNull: false,
     },
 }, {
     tableName: 'Transactions', // 自定义表名

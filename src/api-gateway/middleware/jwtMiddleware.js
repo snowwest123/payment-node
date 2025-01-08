@@ -1,10 +1,10 @@
-import jwtUtils from '../utils/jwtUtils';
+import { verifyToken } from "../../utils/jwtUtils.js";
 
 export const authenticate = (req, res, next) => {
   const token = req.headers['authorization'];
   if (!token) return res.status(403).json({ message: 'Token is required' });
   try {
-    const decoded = jwtUtils.verifyToken(token);
+    const decoded = verifyToken(token);
     req.userId = decoded.id;
     next();
     console.log('Decoded Token:', decoded);

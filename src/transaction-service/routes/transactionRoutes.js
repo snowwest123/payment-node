@@ -6,6 +6,6 @@ const router = express.Router();
 
 router.post('/createTransaction', createTransaction);
 
-router.post('/findAll', findAllTransactionsCon);
+router.post("/findAllOrder", findAllTransactionsCon);
 
 export default router;

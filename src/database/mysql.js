@@ -7,7 +7,7 @@ dotenv.config();
 
 export const sequelize = new Sequelize(process.env.MYSQL_URI, {
   dialect: 'mysql',
-  logging: false,
+  logging: true,
 });
 
 export const connectMySQL = async () => {
