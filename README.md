@@ -49,6 +49,12 @@ mysql: 8.0.40
   - [x] Implement consistent error handling strategies
 - [x] Provide a Postman collection with example requests and responses for all API endpoints. Please refer to the details（payment-api-doc.postman_collection.json）
 
+Test sequence, import postman config:
+   1. register
+   2. login, now you can copy response token
+   3. pay, config postman headers -> authorization: paste just now token
+   4. findAllOrder config postman headers -> authorization: paste just now token
+   ok, all interfaces have been tested
 ### 2. **Database Management**
 - [x] Use MongoDB and MySQL to store user data and transaction records
   - [x] Store user data in MongoDB using Mongoose
